@@ -6,7 +6,7 @@
         <meta name="mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <link rel="stylesheet" href="css/leaflet.css">
-        <link rel="stylesheet" href="css/qgis2web.css"><link rel="stylesheet" href="css/fontawesome-all.min.css">
+        <link rel="stylesheet" href="css/qgis2web.css"><link rel="stylesheet" href="css/fontawesome-all.min.css">\
         <!-- Mobile meta tags to go in head-->
         <meta name="HandheldFriendly" content="True">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
@@ -15,8 +15,8 @@
         <meta http-equiv="cleartype" content="on">
         <style>
         #map {
-            width: 1850px;
-            height: 700px;
+            width: 548px;
+            height: 341px;
         }
         .leaflet-popup-content {
             min-width: 200px;
@@ -38,11 +38,11 @@
         <script src="js/rbush.min.js"></script>
         <script src="js/labelgun.min.js"></script>
         <script src="js/labels.js"></script>
-        <script src="data/reprojected_1.js"></script>
+        <script src="data/Nwegen20230710_1.js"></script>
         <script>
         var map = L.map('map', {
             zoomControl:true, maxZoom:28, minZoom:1
-        }).fitBounds([[-73.87145368786285,-177.22423389570343],[84.16396421204449,176.9680604201378]]);
+        }).fitBounds([[50.8084652653497,5.636056968488152],[50.89555085108347,5.8582272567317615]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
@@ -62,83 +62,71 @@
         });
         layer_OSMStandard_0;
         map.addLayer(layer_OSMStandard_0);
-        function pop_reprojected_1(feature, layer) {
+        function pop_Nwegen20230710_1(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['Location'] !== null ? autolinker.link(feature.properties['Location'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['ascent'] !== null ? autolinker.link(feature.properties['ascent'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['Year'] !== null ? autolinker.link(feature.properties['Year'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['descent'] !== null ? autolinker.link(feature.properties['descent'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['Dates'] !== null ? autolinker.link(feature.properties['Dates'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['segments'] !== null ? autolinker.link(feature.properties['segments'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['Theme'] !== null ? autolinker.link(feature.properties['Theme'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['extras'] !== null ? autolinker.link(feature.properties['extras'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['Notables'] !== null ? autolinker.link(feature.properties['Notables'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['summary'] !== null ? autolinker.link(feature.properties['summary'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['Visitors in millions'] !== null ? autolinker.link(feature.properties['Visitors in millions'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['way_points'] !== null ? autolinker.link(feature.properties['way_points'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['Type'] !== null ? autolinker.link(feature.properties['Type'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['opacity'] !== null ? autolinker.link(feature.properties['opacity'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['No. countries represented'] !== null ? autolinker.link(feature.properties['No. countries represented'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['stroke'] !== null ? autolinker.link(feature.properties['stroke'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['Thumbnail'] !== null ? autolinker.link(feature.properties['Thumbnail'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['stroke-width'] !== null ? autolinker.link(feature.properties['stroke-width'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['Image Source'] !== null ? autolinker.link(feature.properties['Image Source'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['Image Link'] !== null ? autolinker.link(feature.properties['Image Link'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['stroke-opacity'] !== null ? autolinker.link(feature.properties['stroke-opacity'].toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_reprojected_1_0() {
+        function style_Nwegen20230710_1_0() {
             return {
-                pane: 'pane_reprojected_1',
-                radius: 4.0,
+                pane: 'pane_Nwegen20230710_1',
                 opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
+                color: 'rgba(255,247,1,1.0)',
                 dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1,
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(225,89,137,1.0)',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 6.0,
+                fillOpacity: 0,
                 interactive: true,
             }
         }
-        map.createPane('pane_reprojected_1');
-        map.getPane('pane_reprojected_1').style.zIndex = 401;
-        map.getPane('pane_reprojected_1').style['mix-blend-mode'] = 'normal';
-        var layer_reprojected_1 = new L.geoJson(json_reprojected_1, {
+        map.createPane('pane_Nwegen20230710_1');
+        map.getPane('pane_Nwegen20230710_1').style.zIndex = 401;
+        map.getPane('pane_Nwegen20230710_1').style['mix-blend-mode'] = 'normal';
+        var layer_Nwegen20230710_1 = new L.geoJson(json_Nwegen20230710_1, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_reprojected_1',
-            layerName: 'layer_reprojected_1',
-            pane: 'pane_reprojected_1',
-            onEachFeature: pop_reprojected_1,
-            pointToLayer: function (feature, latlng) {
-                var context = {
-                    feature: feature,
-                    variables: {}
-                };
-                return L.circleMarker(latlng, style_reprojected_1_0(feature));
-            },
+            dataVar: 'json_Nwegen20230710_1',
+            layerName: 'layer_Nwegen20230710_1',
+            pane: 'pane_Nwegen20230710_1',
+            onEachFeature: pop_Nwegen20230710_1,
+            style: style_Nwegen20230710_1_0,
         });
-        bounds_group.addLayer(layer_reprojected_1);
-        map.addLayer(layer_reprojected_1);
+        bounds_group.addLayer(layer_Nwegen20230710_1);
+        map.addLayer(layer_Nwegen20230710_1);
         var baseMaps = {};
-        L.control.layers(baseMaps,{'<img src="legend/reprojected_1.png" /> reprojected': layer_reprojected_1,"OSM Standard": layer_OSMStandard_0,}).addTo(map);
+        L.control.layers(baseMaps,{'<img src="legend/Nwegen20230710_1.png" /> N wegen 20230710': layer_Nwegen20230710_1,"OSM Standard": layer_OSMStandard_0,}).addTo(map);
         setBounds();
         </script>
     </body>
