@@ -16,7 +16,7 @@
         <style>
         #map {
             width: 100%;
-            height: 800px;
+            height: auto;
         }
         .leaflet-popup-content {
             min-width: 200px;
@@ -87,7 +87,7 @@
         map.createPane('pane_20230712_1');
         map.getPane('pane_20230712_1').style.zIndex = 401;
         map.getPane('pane_20230712_1').style['mix-blend-mode'] = 'normal';
-        var layer_20230712_1 = new L.geoJson(json_20230712_1, {
+        var layer_20230712_1 = new L.geoJson(geoJson_20230712_1, {
             attribution: '',
             interactive: true,
             dataVar: 'json_20230712_1',
