@@ -38,11 +38,11 @@
         <script src="js/rbush.min.js"></script>
         <script src="js/labelgun.min.js"></script>
         <script src="js/labels.js"></script>
-        <script src="data/Nwegen20230710_1.js"></script>
+        <script src="data/20230712_1.js"></script>
         <script>
         var map = L.map('map', {
             zoomControl:true, maxZoom:28, minZoom:1
-        }).fitBounds([[50.8084652653497,5.636056968488152],[50.89555085108347,5.8582272567317615]]);
+        }).fitBounds([[36.64982558712103,-18.184642824122513],[59.646351255189096,38.89928647462892]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
@@ -62,71 +62,44 @@
         });
         layer_OSMStandard_0;
         map.addLayer(layer_OSMStandard_0);
-        function pop_Nwegen20230710_1(feature, layer) {
+        function pop_20230712_1(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['ascent'] !== null ? autolinker.link(feature.properties['ascent'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['descent'] !== null ? autolinker.link(feature.properties['descent'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['segments'] !== null ? autolinker.link(feature.properties['segments'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['extras'] !== null ? autolinker.link(feature.properties['extras'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['summary'] !== null ? autolinker.link(feature.properties['summary'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['way_points'] !== null ? autolinker.link(feature.properties['way_points'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['opacity'] !== null ? autolinker.link(feature.properties['opacity'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['stroke'] !== null ? autolinker.link(feature.properties['stroke'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['stroke-width'] !== null ? autolinker.link(feature.properties['stroke-width'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['stroke-opacity'] !== null ? autolinker.link(feature.properties['stroke-opacity'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['name'] !== null ? autolinker.link(feature.properties['name'].toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_Nwegen20230710_1_0() {
+        function style_20230712_1_0() {
             return {
-                pane: 'pane_Nwegen20230710_1',
+                pane: 'pane_20230712_1',
                 opacity: 1,
-                color: 'rgba(255,247,1,1.0)',
+                color: 'rgba(255,1,1,1.0)',
                 dashArray: '',
                 lineCap: 'square',
                 lineJoin: 'bevel',
-                weight: 6.0,
+                weight: 2.0,
                 fillOpacity: 0,
                 interactive: true,
             }
         }
-        map.createPane('pane_Nwegen20230710_1');
-        map.getPane('pane_Nwegen20230710_1').style.zIndex = 401;
-        map.getPane('pane_Nwegen20230710_1').style['mix-blend-mode'] = 'normal';
-        var layer_Nwegen20230710_1 = new L.geoJson(json_Nwegen20230710_1, {
+        map.createPane('pane_20230712_1');
+        map.getPane('pane_20230712_1').style.zIndex = 401;
+        map.getPane('pane_20230712_1').style['mix-blend-mode'] = 'normal';
+        var layer_20230712_1 = new L.geoJson(json_20230712_1, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_Nwegen20230710_1',
-            layerName: 'layer_Nwegen20230710_1',
-            pane: 'pane_Nwegen20230710_1',
-            onEachFeature: pop_Nwegen20230710_1,
-            style: style_Nwegen20230710_1_0,
+            dataVar: 'json_20230712_1',
+            layerName: 'layer_20230712_1',
+            pane: 'pane_20230712_1',
+            onEachFeature: pop_20230712_1,
+            style: style_20230712_1_0,
         });
-        bounds_group.addLayer(layer_Nwegen20230710_1);
-        map.addLayer(layer_Nwegen20230710_1);
+        bounds_group.addLayer(layer_20230712_1);
+        map.addLayer(layer_20230712_1);
         var baseMaps = {};
-        L.control.layers(baseMaps,{'<img src="legend/Nwegen20230710_1.png" /> N wegen 20230710': layer_Nwegen20230710_1,"OSM Standard": layer_OSMStandard_0,}).addTo(map);
+        L.control.layers(baseMaps,{'<img src="legend/20230712_1.png" /> 20230712': layer_20230712_1,"OSM Standard": layer_OSMStandard_0,}).addTo(map);
         setBounds();
         </script>
     </body>
