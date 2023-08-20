@@ -47,11 +47,11 @@
         <script src="js/rbush.min.js"></script>
         <script src="js/labelgun.min.js"></script>
         <script src="js/labels.js"></script>
-        <script src="data/20230818_1.js"></script>
+        <script src="data/20230819_1.js"></script>
         <script>
         var map = L.map('map', {
             zoomControl:true, maxZoom:28, minZoom:1
-        }).fitBounds([[50.88346214748141,4.063643557644239],[51.574484307923626,5.885128123935355]]);
+        }).fitBounds([[49.39443202533151,2.0134347090211864],[52.18382313651555,9.29937297418563]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
@@ -71,7 +71,7 @@
         });
         layer_OSMStandard_0;
         map.addLayer(layer_OSMStandard_0);
-        function pop_20230818_1(feature, layer) {
+        function pop_20230819_1(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['name'] !== null ? autolinker.link(feature.properties['name'].toLocaleString()) : '') + '</td>\
@@ -80,11 +80,11 @@
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_20230818_1_0() {
+        function style_20230819_1_0() {
             return {
-                pane: 'pane_20230818_1',
+                pane: 'pane_20230819_1',
                 opacity: 1,
-                color: 'rgba(255,22,1,1.0)',
+                color: 'rgba(255,56,1,1.0)',
                 dashArray: '',
                 lineCap: 'square',
                 lineJoin: 'bevel',
@@ -93,22 +93,22 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_20230818_1');
-        map.getPane('pane_20230818_1').style.zIndex = 401;
-        map.getPane('pane_20230818_1').style['mix-blend-mode'] = 'normal';
-        var layer_20230818_1 = new L.geoJson(json_20230818_1, {
+        map.createPane('pane_20230819_1');
+        map.getPane('pane_20230819_1').style.zIndex = 401;
+        map.getPane('pane_20230819_1').style['mix-blend-mode'] = 'normal';
+        var layer_20230819_1 = new L.geoJson(json_20230819_1, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_20230818_1',
-            layerName: 'layer_20230818_1',
-            pane: 'pane_20230818_1',
-            onEachFeature: pop_20230818_1,
-            style: style_20230818_1_0,
+            dataVar: 'json_20230819_1',
+            layerName: 'layer_20230819_1',
+            pane: 'pane_20230819_1',
+            onEachFeature: pop_20230819_1,
+            style: style_20230819_1_0,
         });
-        bounds_group.addLayer(layer_20230818_1);
-        map.addLayer(layer_20230818_1);
+        bounds_group.addLayer(layer_20230819_1);
+        map.addLayer(layer_20230819_1);
         var baseMaps = {};
-        L.control.layers(baseMaps,{'<img src="legend/20230818_1.png" /> 20230818': layer_20230818_1,"OSM Standard": layer_OSMStandard_0,}).addTo(map);
+        L.control.layers(baseMaps,{'<img src="legend/20230819_1.png" /> 20230819': layer_20230819_1,"OSM Standard": layer_OSMStandard_0,}).addTo(map);
         setBounds();
         </script>
     </body>
