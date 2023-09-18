@@ -6,7 +6,7 @@
         <meta name="mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <link rel="stylesheet" href="css/leaflet.css">
-        <link rel="stylesheet" href="css/qgis2web.css"><link rel="stylesheet" href="css/fontawesome-all.min.css">\
+        <link rel="stylesheet" href="css/qgis2web.css"><link rel="stylesheet" href="css/fontawesome-all.min.css">
         <!-- Mobile meta tags to go in head-->
         <meta name="HandheldFriendly" content="True">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
@@ -14,17 +14,26 @@
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta http-equiv="cleartype" content="on">
         <style>
-        #map {
-            width: 100%;
-            height: 800px;
+        html, body {
+        height: 100%;
         }
+
+        body {
+        margin: 0;
+        }
+
+        #map {
+            width: 99%;
+            height: 100%;
+        }
+        
         .leaflet-popup-content {
             min-width: 200px;
             min-height: 100px;
             overflow-y: scroll;
         }
         </style>
-        <title></title>
+        <title>Completion map</title>
     </head>
     <body>
         <div id="map">
@@ -38,11 +47,11 @@
         <script src="js/rbush.min.js"></script>
         <script src="js/labelgun.min.js"></script>
         <script src="js/labels.js"></script>
-        <script src="data/20230918_1.js"></script>
+        <script src="data/20230823_1.js"></script>
         <script>
         var map = L.map('map', {
             zoomControl:true, maxZoom:28, minZoom:1
-        }).fitBounds([[44.61164823038162,-5.857505898601705],[55.83729948253735,23.286247162056043]]);
+        }).fitBounds([[49.37279387446462,1.621217229418356],[52.1634387755909,8.907155494582799]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
@@ -62,7 +71,7 @@
         });
         layer_OSMStandard_0;
         map.addLayer(layer_OSMStandard_0);
-        function pop_20230918_1(feature, layer) {
+        function pop_20230823_1(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['name'] !== null ? autolinker.link(feature.properties['name'].toLocaleString()) : '') + '</td>\
@@ -71,35 +80,35 @@
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_20230918_1_0() {
+        function style_20230823_1_0() {
             return {
-                pane: 'pane_20230918_1',
+                pane: 'pane_20230823_1',
                 opacity: 1,
-                color: 'rgba(255,31,1,1.0)',
+                color: 'rgba(255,56,1,1.0)',
                 dashArray: '',
                 lineCap: 'square',
                 lineJoin: 'bevel',
-                weight: 2.0,
+                weight: 3.0,
                 fillOpacity: 0,
                 interactive: true,
             }
         }
-        map.createPane('pane_20230918_1');
-        map.getPane('pane_20230918_1').style.zIndex = 401;
-        map.getPane('pane_20230918_1').style['mix-blend-mode'] = 'normal';
-        var layer_20230918_1 = new L.geoJson(json_20230918_1, {
+        map.createPane('pane_20230823_1');
+        map.getPane('pane_20230823_1').style.zIndex = 401;
+        map.getPane('pane_20230823_1').style['mix-blend-mode'] = 'normal';
+        var layer_20230823_1 = new L.geoJson(json_20230823_1, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_20230918_1',
-            layerName: 'layer_20230918_1',
-            pane: 'pane_20230918_1',
-            onEachFeature: pop_20230918_1,
-            style: style_20230918_1_0,
+            dataVar: 'json_20230823_1',
+            layerName: 'layer_20230823_1',
+            pane: 'pane_20230823_1',
+            onEachFeature: pop_20230823_1,
+            style: style_20230823_1_0,
         });
-        bounds_group.addLayer(layer_20230918_1);
-        map.addLayer(layer_20230918_1);
+        bounds_group.addLayer(layer_20230823_1);
+        map.addLayer(layer_20230823_1);
         var baseMaps = {};
-        L.control.layers(baseMaps,{'<img src="legend/20230918_1.png" /> 20230918': layer_20230918_1,"OSM Standard": layer_OSMStandard_0,}).addTo(map);
+        L.control.layers(baseMaps,{'<img src="legend/20230823_1.png" /> 20230823': layer_20230823_1,"OSM Standard": layer_OSMStandard_0,}).addTo(map);
         setBounds();
         </script>
     </body>
