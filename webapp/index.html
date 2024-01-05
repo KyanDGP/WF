@@ -47,7 +47,7 @@
         <script src="js/rbush.min.js"></script>
         <script src="js/labelgun.min.js"></script>
         <script src="js/labels.js"></script>
-        <script src="data/20231220_1.js"></script>
+        <script src="data/20240105_1.js"></script>
         <script>
         var map = L.map('map', {
             zoomControl:true, maxZoom:28, minZoom:1
@@ -71,7 +71,7 @@
         });
         layer_OSMStandard_0;
         map.addLayer(layer_OSMStandard_0);
-        function pop_20231220_1(feature, layer) {
+        function pop_20240105_1(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['Name'] !== null ? autolinker.link(feature.properties['Name'].toLocaleString()) : '') + '</td>\
@@ -83,9 +83,9 @@
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_20231220_1_0() {
+        function style_20240105_1_0() {
             return {
-                pane: 'pane_20231220_1',
+                pane: 'pane_20240105_1',
                 opacity: 1,
                 color: 'rgba(255,18,1,1.0)',
                 dashArray: '',
@@ -96,22 +96,22 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_20231220_1');
-        map.getPane('pane_20231220_1').style.zIndex = 401;
-        map.getPane('pane_20231220_1').style['mix-blend-mode'] = 'normal';
-        var layer_20231220_1 = new L.geoJson(json_20231220_1, {
+        map.createPane('pane_20240105_1');
+        map.getPane('pane_20240105_1').style.zIndex = 401;
+        map.getPane('pane_20240105_1').style['mix-blend-mode'] = 'normal';
+        var layer_20240105_1 = new L.geoJson(json_20240105_1, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_20231220_1',
-            layerName: 'layer_20231220_1',
-            pane: 'pane_20231220_1',
-            onEachFeature: pop_20231220_1,
-            style: style_20231220_1_0,
+            dataVar: 'json_20240105_1',
+            layerName: 'layer_20240105_1',
+            pane: 'pane_20240105_1',
+            onEachFeature: pop_20240105_1,
+            style: style_20240105_1_0,
         });
-        bounds_group.addLayer(layer_20231220_1);
-        map.addLayer(layer_20231220_1);
+        bounds_group.addLayer(layer_20240105_1);
+        map.addLayer(layer_20240105_1);
         var baseMaps = {};
-        L.control.layers(baseMaps,{'<img src="legend/20231220_1.png" /> 20231220': layer_20231220_1,"OSM Standard": layer_OSMStandard_0,}).addTo(map);
+        L.control.layers(baseMaps,{'<img src="legend/20240105_1.png" /> 20240105': layer_20240105_1,"OSM Standard": layer_OSMStandard_0,}).addTo(map);
         setBounds();
         </script>
     </body>
