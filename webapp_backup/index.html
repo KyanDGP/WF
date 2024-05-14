@@ -47,11 +47,11 @@
         <script src="js/rbush.min.js"></script>
         <script src="js/labelgun.min.js"></script>
         <script src="js/labels.js"></script>
-        <script src="data/20240407_1.js"></script>
+        <script src="data/20240514_2.js"></script>
         <script>
         var map = L.map('map', {
             zoomControl:true, maxZoom:28, minZoom:1
-        }).fitBounds([[49.12522135009096,2.124314205028337],[51.930185504611174,8.307282330892892]]);
+        }).fitBounds([[45.02377652295714,-12.889731506548605],[56.162187934692405,15.893825538257506]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
@@ -70,8 +70,20 @@
             maxNativeZoom: 19
         });
         layer_OSMStandard_0;
-        map.addLayer(layer_OSMStandard_0);
-        function pop_20240407_1(feature, layer) {
+        map.createPane('pane_DarkMatter_1');
+        map.getPane('pane_DarkMatter_1').style.zIndex = 401;
+        var layer_DarkMatter_1 = L.tileLayer('http://a.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png', {
+            pane: 'pane_DarkMatter_1',
+            opacity: 1.0,
+            attribution: '<a href="https://cartodb.com/basemaps/">Map tiles by CartoDB, under CC BY 3.0. Data by OpenStreetMap, under ODbL.</a>',
+            minZoom: 1,
+            maxZoom: 28,
+            minNativeZoom: 0,
+            maxNativeZoom: 20
+        });
+        layer_DarkMatter_1;
+        map.addLayer(layer_DarkMatter_1);
+        function pop_20240514_2(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['Name'] !== null ? autolinker.link(feature.properties['Name'].toLocaleString()) : '') + '</td>\
@@ -83,35 +95,35 @@
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_20240407_1_0() {
+        function style_20240514_2_0() {
             return {
-                pane: 'pane_20240407_1',
+                pane: 'pane_20240514_2',
                 opacity: 1,
-                color: 'rgba(255,18,1,1.0)',
+                color: 'rgba(72,123,182,1.0)',
                 dashArray: '',
                 lineCap: 'square',
                 lineJoin: 'bevel',
-                weight: 2.0,
+                weight: 3.0,
                 fillOpacity: 0,
                 interactive: true,
             }
         }
-        map.createPane('pane_20240407_1');
-        map.getPane('pane_20240407_1').style.zIndex = 401;
-        map.getPane('pane_20240407_1').style['mix-blend-mode'] = 'normal';
-        var layer_20240407_1 = new L.geoJson(json_20240407_1, {
+        map.createPane('pane_20240514_2');
+        map.getPane('pane_20240514_2').style.zIndex = 402;
+        map.getPane('pane_20240514_2').style['mix-blend-mode'] = 'normal';
+        var layer_20240514_2 = new L.geoJson(json_20240514_2, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_20240407_1',
-            layerName: 'layer_20240407_1',
-            pane: 'pane_20240407_1',
-            onEachFeature: pop_20240407_1,
-            style: style_20240407_1_0,
+            dataVar: 'json_20240514_2',
+            layerName: 'layer_20240514_2',
+            pane: 'pane_20240514_2',
+            onEachFeature: pop_20240514_2,
+            style: style_20240514_2_0,
         });
-        bounds_group.addLayer(layer_20240407_1);
-        map.addLayer(layer_20240407_1);
+        bounds_group.addLayer(layer_20240514_2);
+        map.addLayer(layer_20240514_2);
         var baseMaps = {};
-        L.control.layers(baseMaps,{'<img src="legend/20240407_1.png" /> 20240407': layer_20240407_1,"OSM Standard": layer_OSMStandard_0,}).addTo(map);
+        L.control.layers(baseMaps,{'<img src="legend/20240514_2.png" /> 20240514': layer_20240514_2,"Dark Matter": layer_DarkMatter_1,"OSM Standard": layer_OSMStandard_0,}).addTo(map);
         setBounds();
         </script>
     </body>
